@@ -1,0 +1,112 @@
+body {
+    background-color: #410349;
+    color: rgb(255, 255, 255);
+    font-family: 'Arial Black', Arial, sans-serif; /* خط ثقيل أصلي */
+    margin: 0;
+    height: 100vh;
+
+    /* توسيط كل المحتوى */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 60px;
+    font-size: 36px;
+    color: #fff;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 2px;       /* توسيع الحروف قليل */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5); /* ظل جميل للعنوان */
+}
+
+.container {
+    display: flex;
+    gap: 110px;              /* المسافة بينهم */
+    justify-content: center;
+    align-items: center;
+}
+
+/* الكرت نفسه */
+.card {
+    width: 240px;           
+    height: 300px;
+    perspective: 1200px;
+    text-decoration: none;
+}
+
+/* الجزء اللي ينقلب */
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.9s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* الوجه الأمامي والخلفي */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    backface-visibility: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* ظل للكرت */
+}
+
+/* الوجه الأمامي */
+.card-front {
+    background-color: #ffffff;
+}
+
+.card-front img {
+    width:90px;            
+    margin-bottom: 15px;
+}
+
+.card-front p {
+    font-size: 20px;          /* أكبر قليلًا */
+    font-weight: 900;          /* ثقيل جدًا */
+    color: #000;               /* أسود */
+    text-shadow: 1px 1px 3px rgba(255,255,255,0.5); /* لمعة بسيطة على النص */
+    letter-spacing: 1px;       /* توسيع الحروف */
+    font-family: 'Arial Black', Arial, sans-serif; /* خط ثقيل */
+    text-align: center;
+}
+
+/* الوجه الخلفي */
+.card-back {
+    background-color: #000000;
+    transform: rotateY(180deg);
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    background-color: #555;
+}
+
+.card-back span {
+    font-size: 18px;           /* أكبر وأوضح */
+    font-weight: 900;           /* ثقيل جدًا */
+    color: #ffffff;                /* أبيض على الخلفية السوداء */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6); /* زخرفة بسيطة للخط */
+    letter-spacing: 1px;       /* توسيع الحروف */
+    font-family: 'Arial Black', Arial, sans-serif; /* خط ثقيل */
+    text-align: center;
+}

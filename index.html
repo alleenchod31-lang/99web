@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>99</title>
+<style>
+/* ====== إعداد الصفحة ====== */
+body {
+    background-color: #0095ff74;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 60px;
+    font-size: 36px;
+    font-weight: 900;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    gap: 110px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ====== الكروت ====== */
+.card {
+    width: 240px;
+    height: 300px;
+    perspective: 1200px;
+    text-decoration: none;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.9s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.card-front {
+    background-color: #ffffff;
+}
+
+.card-front img {
+    width: 90px;
+    margin-bottom: 15px;
+}
+
+.card-front p {
+    font-size: 20px;
+    font-weight: 900;
+    color: #000;
+    text-align: center;
+}
+
+.card-back {
+    background-color: #000000;
+    transform: rotateY(180deg);
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+.card-back span {
+    font-size: 18px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+}
+
+/* ====== مشغل الموسيقى ====== */
+#music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999;
+}
+
+#disc {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    background-image: url('https://img.sanishtech.com/u/e19a6961dec7e78ac3e03cce2287911a.png');
+    background-size: cover;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+}
+
+button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* ====== الحقوق ====== */
+.footer-credit {
+    position: fixed;
+    bottom: 15px;
+    left: 20px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<h1>حساباتي</h1>
+
+<div class="container">
+    <!-- Discord -->
+    <a href="https://discord.gg/EHfECzTE9z" target="_blank" class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png">
+                <p>𝕄𝕪 𝐇𝐨𝐦𝐞</p>
+            </div>
+            <div class="card-back">
+                <img class="avatar" src="https://files.kick.com/images/user/40010349/profile_image/conversion/ea21f366-01e8-4215-9b8c-44233714fa6b-fullsize.webp">
+                <span>@99 home</span>
+            </div>
+        </div>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@df.pp1" target="_blank" class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+                <p>𝕋𝕚𝕜𝕋𝕠𝕜</p>
+            </div>
+            <div class="card-back">
+                <img class="avatar" src="https://files.kick.com/images/user/40010349/profile_image/conversion/ea21f366-01e8-4215-9b8c-44233714fa6b-fullsize.webp">
+                <span>@df.pp1</span>
+            </div>
+        </div>
+    </a>
+
+    <!-- Kick -->
+    <a href="https://kick.com/df-pp" target="_blank" class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAA8klEQVR4AWMgCYwCy3UCLudFXM6iIKCI+XIBNJWq+dyul7GotN4iyKvBgtMC95siIf8lMBFQJ5pKvW5erCq9HokKGLDitMDtGsiC4D/ICLsFWg08WFV63qXMArVSHphjgVJUtOCsCDzoYQqoagFQXMyZTcSWFRL0lFuAjoJ+SPg8FwMi//fiQC7lFmAieLjjQmSnIgQiYLrDQSFgJjCZx8+tzEwTC9jFmeDmUNECRBbj12OhrgWIFAwMGWD4cCvSxgLlLC649qFmAWYQ0S+S6ZlM6Z/R6F9UYBZ2dCqu6VXh0L/KpEulT/NmCz0bXoTBKAAAlvjKZQX6JB8AAAAASUVORK5CYII=">
+                <p>Kick</p>
+            </div>
+            <div class="card-back">
+                <img class="avatar" src="https://files.kick.com/images/user/40010349/profile_image/conversion/ea21f366-01e8-4215-9b8c-44233714fa6b-fullsize.webp">
+                <span>@df_pp</span>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div class="footer-credit">Designed & Developed by Layan</div>
+
+<div id="music-player">
+    <div id="disc"></div>
+    <div class="controls">
+        <button id="playPause">⏸</button>
+        <button id="mute">🔊</button>
+    </div>
+</div>
+
+<audio id="audio" src="99.mp3" autoplay loop></audio>
+
+<script>
+const audio = document.getElementById('audio');
+const disc = document.getElementById('disc');
+const playBtn = document.getElementById('playPause');
+const muteBtn = document.getElementById('mute');
+
+// يبدأ من 1:48
+audio.addEventListener('loadedmetadata', () => {
+    audio.currentTime = 108;
+});
+
+// تشغيل تلقائي عند أول تفاعل
+document.addEventListener('click', () => {
+    audio.play();
+}, { once: true });
+
+playBtn.onclick = () => {
+    if (audio.paused) {
+        audio.play();
+        disc.style.animation = 'spin 4s linear infinite';
+        playBtn.textContent = '⏸';
+    } else {
+        audio.pause();
+        disc.style.animation = 'none';
+        playBtn.textContent = '▶';
+    }
+};
+
+muteBtn.onclick = () => {
+    audio.muted = !audio.muted;
+    muteBtn.textContent = audio.muted ? '🔇' : '🔊';
+};
+</script>
+
+</body>
+</html>
